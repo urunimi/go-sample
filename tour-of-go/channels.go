@@ -23,6 +23,7 @@ func sum(s []int, c chan int) {
 	for _, v := range s {
 		sum += v
 	}
+	fmt.Println(sum)
 	c <- sum
 }
 
