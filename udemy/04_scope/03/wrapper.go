@@ -2,8 +2,7 @@ package main
 
 import "fmt"
 
-func wrapper() func() int {
-	x := 0
+func wrapper(x int) func() int {
 	return func() int {
 		x++
 		return x
@@ -11,12 +10,12 @@ func wrapper() func() int {
 }
 
 func main() {
-	increment := wrapper()
+	increment := wrapper(0)
 
 	fmt.Println(increment())
 	fmt.Println(increment())
 
-	increment = wrapper()
+	increment = wrapper(1)
 
 	fmt.Println(increment())
 	fmt.Println(increment())
