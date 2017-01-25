@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// x : function body scope
 func wrapper(x int) func() int {
 	return func() int {
 		x++
